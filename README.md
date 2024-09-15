@@ -26,4 +26,4 @@ joblib
 3. Run Import Library step
 4. Find a header called Test Model start from here, execute all the step below it 
 ![alt text](image.png)
-5. Start to test your model
+5. Start to test your model by using <code>rescaledX_test</code>, <code>rescaledX_train</code>, <code>y_test</code>, <code>y_train</code>
