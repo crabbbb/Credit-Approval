@@ -1,5 +1,5 @@
 import streamlit as st
-from joblib import load
+import joblib
 from sklearn.preprocessing import OrdinalEncoder, MinMaxScaler
 import numpy as np 
 
