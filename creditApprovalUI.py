@@ -27,18 +27,18 @@ def main() :
     """
     
     response = {
-        'A2' : np.NAN,
-        'A3' : np.NAN,
+        'A2' : np.nan,
+        'A3' : np.nan,
         'A4' : '',
         'A5' : '',
         'A6' : '',
-        'A8' : np.NAN,
+        'A8' : np.nan,
         'A9' : '',
         'A10' : '',
-        'A11' : np.NAN,
+        'A11' : np.nan,
         'A13' : '',
-        'A14' : np.NAN,
-        'A15' : np.NAN
+        'A14' : np.nan,
+        'A15' : np.nan
     }
 
     ## A2 
