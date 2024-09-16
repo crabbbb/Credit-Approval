@@ -59,7 +59,7 @@ def main() :
     }
 
     ## A2 
-    numberA2 = st.number_input("Enter value for A2 > ", min_value=0, format="%.2f")
+    numberA2 = st.number_input("Enter value for A2 > ", min_value=0.0, format="%.2f")
 
     # Display the entered number
     st.write(f"A2 > {numberA2}")
@@ -67,7 +67,7 @@ def main() :
     response['A2'] = numberA2
 
     ## A3
-    numberA3 = st.number_input("Enter value for A3 > ", min_value=0, format="%.2f")
+    numberA3 = st.number_input("Enter value for A3 > ", min_value=0.0, format="%.2f")
 
     # Display the entered number
     st.write(f"A3 > {numberA3}")
@@ -102,7 +102,7 @@ def main() :
     response['A6'] = optionA6
 
     ## A8
-    numberA8 = st.number_input("Enter value for A8 > ", min_value=0, format="%.2f")
+    numberA8 = st.number_input("Enter value for A8 > ", min_value=0.0, format="%.2f")
 
     # Display the entered number
     st.write(f"A8 > {numberA8}")
@@ -145,7 +145,7 @@ def main() :
     response['A13'] = optionA13
 
     ## A14
-    numberA14 = st.number_input("Enter value for A14 > ", min_value=0, format="%.2f")
+    numberA14 = st.number_input("Enter value for A14 > ", min_value=0.0, format="%.2f")
 
     # Display the entered number
     st.write(f"A14 > {numberA14}")
@@ -153,7 +153,7 @@ def main() :
     response['A14'] = numberA14
 
     ## A15
-    numberA15 = st.number_input("Enter value for A15 > ", min_value=0, format="%.2f")
+    numberA15 = st.number_input("Enter value for A15 > ", min_value=0.0, format="%.2f")
 
     # Display the entered number
     st.write(f"A15 > {numberA15}")
