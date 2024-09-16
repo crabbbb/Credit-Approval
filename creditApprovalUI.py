@@ -30,7 +30,7 @@ A13 = ['g', 's', 'p']
 
 def predict(response) : 
     # pipeline
-    return pipeline.predict(response)
+    return "Approve" if pipeline.predict(response) == 0 else "Reject"
 
 
 def main() :
