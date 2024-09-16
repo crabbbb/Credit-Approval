@@ -42,7 +42,7 @@ def main() :
     <h2 style="color:white;text-align:center;">Streamlit Credict Approval App </h2>
     </div>
     """
-    
+    result=""
     response = {
         'A2' : np.nan,
         'A3' : np.nan,
