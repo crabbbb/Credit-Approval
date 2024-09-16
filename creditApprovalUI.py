@@ -13,6 +13,7 @@ from sklearn.neighbors import KNeighborsClassifier
 import xgboost as xgb
 from sklearn.metrics import *
 from sklearn.model_selection import RandomizedSearchCV, GridSearchCV, StratifiedKFold
+import ModelPipeline
 
 
 # load pipeline to execute encoder, scaler and model
