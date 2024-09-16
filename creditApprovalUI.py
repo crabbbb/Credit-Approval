@@ -17,7 +17,7 @@ import ModelPipeline
 
 
 # load pipeline to execute encoder, scaler and model
-pipeline = joblib.load('pklFolder\pipeline.pkl')
+pipeline = joblib.load('pklFolder/pipeline.pkl')
 
 # Dropdown list options 
 A4 = ['u', 'y', 'l']

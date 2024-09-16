@@ -1,3 +1,19 @@
+import streamlit as st
+import joblib
+import numpy as np 
+import pandas as pd
+from sklearn.preprocessing import OrdinalEncoder, MinMaxScaler, LabelEncoder
+from scipy.stats import zscore
+from sklearn.utils import shuffle
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
+import xgboost as xgb
+from sklearn.metrics import *
+from sklearn.model_selection import RandomizedSearchCV, GridSearchCV, StratifiedKFold
+
 # due to the fitting problem cannot be skip, at here will create a custom pipeline by accessing 3 value as parameter 
 class ModelPipeline:
     
