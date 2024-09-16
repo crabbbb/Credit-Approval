@@ -13,6 +13,7 @@ from sklearn.neighbors import KNeighborsClassifier
 import xgboost as xgb
 from sklearn.metrics import *
 from sklearn.model_selection import RandomizedSearchCV, GridSearchCV, StratifiedKFold
+import pickle
 
 # due to the fitting problem cannot be skip, at here will create a custom pipeline by accessing 3 value as parameter 
 class ModelPipeline:

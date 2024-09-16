@@ -14,6 +14,7 @@ import xgboost as xgb
 from sklearn.metrics import *
 from sklearn.model_selection import RandomizedSearchCV, GridSearchCV, StratifiedKFold
 import ModelPipeline
+import pickle
 
 
 # load pipeline to execute encoder, scaler and model
