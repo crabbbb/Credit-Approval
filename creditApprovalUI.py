@@ -1,12 +1,22 @@
 import streamlit as st
 import joblib
-from sklearn.preprocessing import OrdinalEncoder, MinMaxScaler
 import numpy as np 
+import pandas as pd
+from sklearn.preprocessing import OrdinalEncoder, MinMaxScaler, LabelEncoder
+from scipy.stats import zscore
+from sklearn.utils import shuffle
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
+import xgboost as xgb
+from sklearn.metrics import *
+from sklearn.model_selection import RandomizedSearchCV, GridSearchCV, StratifiedKFold
 
-# load encoder, scaler and model 
-encoder = joblib.load('pklFolder/encoder.pkl')
-scaler = joblib.load('pklFolder/scaler.pkl')
-model = joblib.load('pklFolder/model/LogisticRegression.pkl')
+
+# load pipeline to execute encoder, scaler and model
+pipeline = joblib.load('pklFolder/pipeline.pkl')
 
 # Dropdown list options 
 A4 = ['u', 'y', 'l']
@@ -15,6 +25,11 @@ A6 = ['w', 'q', 'm', 'r', 'cc', 'k', 'c', 'd', 'x', 'i', 'e', 'aa', 'ff', 'j']
 A9 = ['t', 'f']
 A10 = ['t', 'f']
 A13 = ['g', 's', 'p']
+
+def predict(response) : 
+    # pipeline
+    return pipeline.predict(response)
+
 
 def main() :
     # Title 
@@ -42,7 +57,7 @@ def main() :
     }
 
     ## A2 
-    numberA2 = st.number_input("A2 > ", min_value=0)
+    numberA2 = st.number_input("Enter value for A2 > ", min_value=0)
 
     # Display the entered number
     st.write(f"A2 > {numberA2}")
@@ -50,7 +65,7 @@ def main() :
     response['A2'] = numberA2
 
     ## A3
-    numberA3 = st.number_input("A3 > ", min_value=0)
+    numberA3 = st.number_input("Enter value for A3 > ", min_value=0)
 
     # Display the entered number
     st.write(f"A3 > {numberA3}")
@@ -85,7 +100,7 @@ def main() :
     response['A6'] = optionA6
 
     ## A8
-    numberA8 = st.number_input("A8 > ", min_value=0)
+    numberA8 = st.number_input("Enter value for A8 > ", min_value=0)
 
     # Display the entered number
     st.write(f"A8 > {numberA8}")
@@ -111,7 +126,7 @@ def main() :
     response['A10'] = optionA10
 
     ## A11
-    numberA11 = st.number_input("A11 > ", min_value=0)
+    numberA11 = st.number_input("Enter value for A11 > ", min_value=0)
 
     # Display the entered number
     st.write(f"A11 > {numberA11}")
@@ -128,7 +143,7 @@ def main() :
     response['A13'] = optionA13
 
     ## A14
-    numberA14 = st.number_input("A14 > ", min_value=0)
+    numberA14 = st.number_input("Enter value for A14 > ", min_value=0)
 
     # Display the entered number
     st.write(f"A14 > {numberA14}")
@@ -136,12 +151,18 @@ def main() :
     response['A14'] = numberA14
 
     ## A15
-    numberA15 = st.number_input("A15 > ", min_value=0)
+    numberA15 = st.number_input("Enter value for A15 > ", min_value=0)
 
     # Display the entered number
     st.write(f"A15 > {numberA15}")
 
     response['A15'] = numberA15
+
+    # create a button - this button name "Predict"
+    if st.button("Predict"):
+        result = predict(response=response) # when click will run this function 
+        
+    st.success('The output is {}'.format(result)) 
 
 
 if __name__=='__main__':
